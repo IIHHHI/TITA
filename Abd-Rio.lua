@@ -3707,30 +3707,18 @@ return false
 end
 --     Source Trox     --
 if text == "المطور" or text == "مطور" or text == "↫ المطور ᥀" then
-local Check = https.request('https://api.telegram.org/bot'..TokenBot..'/getChat?chat_id='..DevRio:get(Trox.."Rio:ChId"))
-local GetInfo = JSON.decode(Check)
-local DevCh1 = GetInfo.result.username
-local DevText = DevRio:get(Trox.."DevText")
-if DevRio:get(Trox.."Rio:ChId") then DevCh = '\n᥀︙*Dev Ch* ↬ [@'..DevCh1..']' else DevCh = '' end
-if DevText then
-Dev_Rio(msg.chat_id_, msg.id_,DevText)
-else
-tdcli_function({ID="GetUser",user_id_=DevId},function(arg,result)
-tdcli_function({ID = "GetUserProfilePhotos",user_id_=DevId,offset_=0,limit_ = 1},function(arg,getpro) 
-if getpro.photos_[0] then
-Text = "*᥀︙Dev Name ↬ * ["..result.first_name_.."](t.me/"..result.username_..")\n*᥀︙Dev User ↬* [@"..result.username_.."]\n*᥀︙Dev Ch ↬* [@"..DevCh1.."]"
-keyboard = {}
-keyboard.inline_keyboard = {{{text=''..result.first_name_..'',url="https://t.me/"..result.username_..""}}}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Text)..'&photo='..getpro.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-else
-Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙*Dev User* ↬ ['..DevUser..']\n᥀︙*Dev Id* ↬ '..DevId..DevCh, 1, "md")
-end
-end,nil)   
-end,nil)   
-end
-end
---     Source Trox     --
+  𝑍 𝑂 𝑍 𝑂 مامتواجده, [٢٥.١٠.٢١ ٢١:٥٤]
+  [Forwarded from معتزل]
+  if text and (text == 'المطور' or text == 'مطور' or text == '↫  المطور ᥀') then
+  tdcli_function({ID="GetUser",user_id_=DevId},function(arg,result)
+  local msg_id = msg.id_/2097152/0.5
+  local getbio = GetBio(DevId)
+  Text = "*✫︙Dev Name ↬ * ["..result.first_name_.."](T.me/"..result.username_..")\n*✫︙Dev User ↬* [@"..result.username_.."]\n*✫︙Dev BIO ↬* ["..getbio.."]"
+  keyboard = {} 
+  keyboard.inline_keyboard = {{{text = ''..result.first_name_..' ',url="t.me/"..result.username_ or oo8oeh}}}
+  https.request("https://api.telegram.org/bot"..Tokenbot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/'..result.username_..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+  end,nil)
+  end
 if text == "معرفي" or text == "↫  معرفي ᥀" then
 function get_username(extra,result,success)
 text = '᥀︙معرفك ↫ ❨ User ❩'
