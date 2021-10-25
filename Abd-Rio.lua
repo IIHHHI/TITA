@@ -144,7 +144,7 @@ DevId = Config.DevId
 SudoIds = {Config.SudoIds,-1001582329762,1922908800,1922908800}
 Trox = Config.Trox
 TokenBot = Config.TokenBot
-NameBot = (DevRio:get(Trox..'Rio:NameBot') or 'تروكس')
+NameBot = (DevRio:get(Trox..'Rio:NameBot') or 'سرو')
 --     Source Trox     --
 FilesPrint = "\27[35m".."\nAll Source Files Started ↬ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"..'\27[m'
 FilesNumber = 0
@@ -415,7 +415,7 @@ end
 function AddFileSource(msg,chat,ID_FILE,File_Name)
 if File_Name:match('.lua') then
 if File_Name ~= "Abd-Rio.lua" then 
-send(chat,msg.id_," ᥀︙هذا الملف ليس تابع لسورس تروكس")
+send(chat,msg.id_," ᥀︙هذا الملف ليس تابع لسورس سرو")
 return false 
 end      
 local File = json:decode(https.request('https://api.telegram.org/bot'..TokenBot..'/getfile?file_id='..ID_FILE) ) 
@@ -2287,7 +2287,7 @@ end
 if DataText and DataText:match('/UpdateSource:'..tonumber(data.sender_user_id_)..'(.*)') then
 local Rio = DataText:match('/UpdateSource:'..tonumber(data.sender_user_id_)..'(.*)')
 os.execute('rm -rf Abd-Rio.lua') 
-os.execute('wget https://raw.githubusercontent.com/Team-Trox-abdSource/Trox/master/Abd-Rio.lua') 
+os.execute('wget https://raw.githubusercontent.com/IIHHHI/TITA/master/Abd-Rio.lua') 
 dofile('Abd-Rio.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
@@ -3047,8 +3047,8 @@ end
 DevRio:del(Trox.."Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_)
 return false
 end
-if text and text:match('^'..(DevRio:get(Trox..'Rio:NameBot') or "تروكس")..' ') then
-data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..(DevRio:get(Trox..'Rio:NameBot') or "تروكس")..' ','')
+if text and text:match('^'..(DevRio:get(Trox..'Rio:NameBot') or "سرو")..' ') then
+data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..(DevRio:get(Trox..'Rio:NameBot') or "سرو")..' ','')
 end
 if data.message_.content_.text_ then
 local NewCmmd = DevRio:get(Trox.."Set:Cmd:Group:New1"..msg.chat_id_..":"..data.message_.content_.text_)
@@ -3361,7 +3361,7 @@ end
 if ChatType == 'pv' then 
 if text == '/start' or text == '↫ رجوع ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙مرحبا عزيزي المطور \n᥀︙انت المطور الاساسي هنا \n᥀︙اليك ازرار سورس تروكس \n᥀︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙مرحبا عزيزي المطور \n᥀︙انت المطور الاساسي هنا \n᥀︙اليك ازرار سورس سرو \n᥀︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ السورس ᥀','وضع اسم البوت'},
 {'↫  المطورين ᥀','↫ الاحصائيات ᥀'},
@@ -3374,7 +3374,7 @@ return false
 end end
 if text == '↫ تعيين كلايش الاوامر ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بتعديل وتغيير كلايش سورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بتعديل وتغيير كلايش سورس سرو فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'تغير معلومات الترحيب'},
 {'حذف كليشة الايدي','تعيين كليشة الايدي'},
@@ -3389,7 +3389,7 @@ return false
 end end
 if text == '↫ السورس ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بتحديث  سورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بتحديث  سورس سرو فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ تحديث السورس ᥀','↫ تحديث ᥀'},
 {'↫ السيرفر ᥀'},
@@ -3402,7 +3402,7 @@ return false
 end end
 if text == '↫ الاحصائيات ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه ب أحصائيات  سورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه ب أحصائيات  سورس سرو فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫  الاحصائيات ᥀'},
 {'↫ المشتركين ᥀','↫ المجموعات ᥀'},
@@ -3416,7 +3416,7 @@ return false
 end end
 if text == '↫  المطورين ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه ب المطورين لسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه ب المطورين لسورس سرو فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ الاساسيين ᥀','مسح الاساسيين'},
 {'↫ الثانويين ᥀','مسح الثانويين'},
@@ -3429,7 +3429,7 @@ return false
 end end
 if text == '↫ التفعيل والتعطيل ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه ب التفعيل والتعطيل لسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه ب التفعيل والتعطيل لسورس سرو فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ تعطيل التواصل ᥀','↫ تفعيل التواصل ᥀'},
 {'↫ تعطيل ترحيب البوت ᥀','↫ تفعيل ترحيب البوت ᥀'},
@@ -3444,7 +3444,7 @@ return false
 end end
 if text == '↫ الاذاعه ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بالاذاعه لسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بالاذاعه لسورس سرو فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ اذاعه بالتثبيت ᥀'},
 {'↫ اذاعه خاص ᥀','↫ اذاعه عام ᥀'},
@@ -3457,7 +3457,7 @@ return false
 end end
 if text == '↫ العام ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بالعام لسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بالعام لسورس سرو فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ اضف رد عام ᥀','↫ حذف رد عام ᥀'},
 {'↫ ردود العام ᥀','↫ مسح ردود العام ᥀'},
@@ -3469,7 +3469,7 @@ return false
 end end
 if text == '↫ ردود الخاص ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بردود الخاص لسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بردود الخاص لسورس سرو فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ تعيين رد الخاص ᥀','↫ حذف رد الخاص ᥀'},
 {'↫ جلب رد الخاص ᥀'},
@@ -3480,7 +3480,7 @@ return false
 end end
 if text == '↫ الاشتراك الاجباري ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بالاشتراك الاجباري لسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بالاشتراك الاجباري لسورس سرو فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫  تفعيل الاشتراك الاجباري ᥀','↫  تعطيل الاشتراك الاجباري ᥀'},
 {'↫ تعيين قناة الاشتراك ᥀',' ↫ حذف قناة الاشتراك ᥀'},
@@ -3492,7 +3492,7 @@ SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end end
 if text == '↫ الاوامر الخدميه ᥀' or text == '/play' or text == '↫  رجوع  ᥀' or text == 'اوامر الخدميه' or text == '/free' then
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بالاوامر الخدميه الخاصه بسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بالاوامر الخدميه الخاصه بسورس سرو فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ اوامر التسليه ᥀','↫ الاوامر الخدميه  ᥀'},
 {'↫ اوامر النسب ᥀'},
@@ -3504,7 +3504,7 @@ SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end
 if text == '↫ اوامر التسليه ᥀' then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بأوامر التسليه الخاصه بسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بأوامر التسليه الخاصه بسورس سرو فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ غنيلي ᥀','↫ اغنيه ᥀'},
 {'↫ ميمز ᥀','↫ ريمكس ᥀'},
@@ -3516,7 +3516,7 @@ SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end
 if text == '↫ الاوامر الخدميه  ᥀' then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بالاوامر الخدميه الخاصه بسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بالاوامر الخدميه الخاصه بسورس سرو فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ الابراج ᥀','↫ حساب العمر ᥀'},
 {'↫ الزخرفه ᥀','↫ معاني الاسماء ᥀'},
@@ -3529,7 +3529,7 @@ SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end
 if text == '↫ اوامر النسب ᥀' then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بأوامر النسب الخاصه بسورس تروكس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بأوامر النسب الخاصه بسورس سرو فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ نسبه الكره ᥀','↫ نسبه الحب ᥀'},
 {'↫ نسبه الرجوله ᥀','↫ نسبه الانوثه ᥀'},
@@ -3541,7 +3541,7 @@ SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end
 if text == '↫ العاب ᥀' then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بألعاب سورس تروكس فقط اضغط على اللعبه الذي تريد لعبها'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بألعاب سورس سرو فقط اضغط على اللعبه الذي تريد لعبها'
 local key = {
 {'↫ الالعاب ᥀','↫ الالعاب المتطوره ᥀'},
 {'↫ كت ᥀'},
@@ -5093,7 +5093,7 @@ end end
 if SecondSudo(msg) then
 if text == 'جلب نسخه الكروبات' and ChCheck(msg) or text == 'جلب نسخه احتياطيه' and ChCheck(msg) or text == 'جلب النسخه الاحتياطيه' and ChCheck(msg) or text == '↫ جلب نسخه احتياطيه ᥀' and ChCheck(msg) then
 local List = DevRio:smembers(Trox..'Rio:Groups') 
-local BotName = (DevRio:get(Trox.."Rio:NameBot") or 'تروكس')
+local BotName = (DevRio:get(Trox.."Rio:NameBot") or 'سرو')
 local GetJson = '{"BotId": '..Trox..',"BotName": "'..BotName..'","GroupsList":{'  
 for k,v in pairs(List) do 
 LinkGroups = DevRio:get(Trox.."Rio:Groups:Links"..v)
@@ -5298,21 +5298,21 @@ end
 --     Source Trox     --
 if ChatType == 'sp' or ChatType == 'gp' or ChatType == 'pv' then
 if text == 'بوت' or text == 'بوتت' then 
-NameBot = (DevRio:get(Trox..'Rio:NameBot') or 'تروكس')
+NameBot = (DevRio:get(Trox..'Rio:NameBot') or 'سرو')
 local TroxTeam = {' كول حبيبي ؟ اني '..NameBot..' ',' وياك القميل '..NameBot..' ',' اسمي القميل '..NameBot..' '}
 DevRio2 = math.random(#TroxTeam) 
 Dev_Rio(msg.chat_id_, msg.id_, 1, TroxTeam[DevRio2] , 1, 'html') 
 return false
 end
 if text == 'اسم البوت' or text == 'البوت شنو اسمه' or text == 'شسمه البوت' or text == 'البوت شسمه' then
-NameBot = (DevRio:get(Trox..'Rio:NameBot') or 'تروكس') 
+NameBot = (DevRio:get(Trox..'Rio:NameBot') or 'سرو') 
 local TroxTeam = {"اسمي القميل "..NameBot.." "} 
 DevRio2 = math.random(#TroxTeam) 
 Dev_Rio(msg.chat_id_, msg.id_, 1, TroxTeam[DevRio2] , 1, 'html') 
 return false
 end
-if text and text == (DevRio:get(Trox..'Rio:NameBot') or 'تروكس') then 
-NameBot = (DevRio:get(Trox..'Rio:NameBot') or 'تروكس')
+if text and text == (DevRio:get(Trox..'Rio:NameBot') or 'سرو') then 
+NameBot = (DevRio:get(Trox..'Rio:NameBot') or 'سرو')
 local namebot = {'كول حبيبي ؟ اني '..NameBot..' ',' وياك القميل '..NameBot..' '} 
 name = math.random(#namebot) 
 Dev_Rio(msg.chat_id_, msg.id_, 1, namebot[name] , 1, 'html') 
@@ -6286,7 +6286,7 @@ end
 --     Source Trox     --
 if text == "مشاهده المنشور" and ChCheck(msg) or text == "مشاهدات المنشور" and ChCheck(msg) or text == "عدد المشاهدات" and ChCheck(msg) then
 DevRio:set(Trox..'Rio:viewget'..msg.sender_user_id_,true)
-Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙حسنا قم باعادة توجيه للمنشور الذي تريدني حساب مشاهداته', 1, 'md')
+Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙حسنا قم باعادة توجيه ]] الذي تريدني حساب مشاهداته', 1, 'md')
 end
 --     Source Trox     --
 if text == "سورس" and ChCheck(msg) or text == "السورس" and ChCheck(msg) or text == "يا سورس" and ChCheck(msg) or text == "↫  السورس ᥀" and ChCheck(msg) then
@@ -6297,7 +6297,7 @@ Welcome To Source
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = '᥀ Source Channel',url="https://t.me/YY55c"}},{{text = '᥀ Developer',url="t.me/lIHHHl"},{text = '᥀ Tws Trox',url="https://t.me/PLJBOT"}},{{text= '᥀ Exp Source .',url="https://t.me/PHPHB"}}}
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/YY55c&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/lIHHHl&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 --     Source Trox     --
@@ -12955,9 +12955,9 @@ end
 --     Source Trox     --
 if SecondSudo(msg) then
 if text == "تحديث السورس" and ChCheck(msg) or text == "تحديث سورس" and ChCheck(msg) or text == "↫ تحديث السورس ᥀" and ChCheck(msg) then 
-Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙جاري تحديث سورس تروكس', 1, 'md') 
+Dev_Rio(msg.chat_id_, msg.id_, 1, '᥀︙جاري تحديث سورس سرو', 1, 'md') 
 os.execute('rm -rf Abd-Rio.lua') 
-os.execute('wget https://raw.githubusercontent.com/Team-Trox-abdSource/Trox/master/Abd-Rio.lua') 
+os.execute('wget https://raw.githubusercontent.com/IIHHHI/TITA/master/Abd-Rio.lua') 
 dofile('Abd-Rio.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
@@ -12975,7 +12975,7 @@ local Users = DevRio:smembers(Trox.."User_Bot")
 local Groups = DevRio:smembers(Trox..'Chek:Groups')
 local Sudos = DevRio:smembers(Trox.."Sudo:User")
 if DevRio:get(Trox..'Name:Bot') then
-DevRio:set(Trox..'Rio:NameBot',(DevRio:get(Trox..'Name:Bot') or 'تروكس'))
+DevRio:set(Trox..'Rio:NameBot',(DevRio:get(Trox..'Name:Bot') or 'سرو'))
 end
 for i = 1, #Users do
 local id = Users[i]
@@ -13044,7 +13044,7 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n᥀︙قائمة ملفات متجر سورس تروكس\n᥀︙الملفات المتوفره حاليا ↫ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
+local TextS = "\n᥀︙قائمة ملفات متجر سورس سرو\n᥀︙الملفات المتوفره حاليا ↫ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 local TextE = "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n᥀︙علامة ↫ (✔) تعني الملف مفعل\n᥀︙علامة ↫ (✖️) تعني الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
